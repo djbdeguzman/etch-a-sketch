@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="canvas">
+        <h1>Etch-a-Sketch</h1>
+        <div id="main-container" class="grid-container"></div>
+        <div class="gridSize">
+            <!-- <button class="btn margin-top8 black" onclick="boxDivsAddEventBlack()">Black</button>
+            <button class="btn margin-top8 red" onclick="boxDivsAddEventRed()">Red</button>
+            <button class="btn margin-top8 green" onclick="boxDivsAddEventGreen()">Green</button>
+            <button class="btn margin-top8 blue" onclick="boxDivsAddEventBlue()">Blue</button>
+            <button class="btn margin-top8 rgb" onclick="rgb()">RGB</button> -->
+            <div class="gridSizeMod margin-8--0">
+                <p >Grid Size:</p>
+                <input id="numberOnly" class="sizeInput margin-left8 margin-bottom0" type="text" >
+                <button class="btn margin-left8 margin-bottom0" onclick="submitButtonEvent()">Submit</button>
+            </div>
+            <div>
+                <p id="error" class="margin-8--0">Please enter value from 2 to 100 only</p>
+            </div>
+        </div>
+    </div>
+        <script src="index.js"></script>
+</body>
+</html>

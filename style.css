@@ -1,0 +1,90 @@
+/* universal style */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+    text-align: center;
+}
+body {
+    
+}
+  h1 {
+    font-size: 40px;
+  }
+  p {
+    font-size: 24px;
+    margin: 8px 0px;
+  }
+  .margin-left8 {
+    margin-left: 8px;
+  }
+  .margin-bottom0 {
+    margin-bottom: 0px;
+  }
+  .margin-8--0 {
+    margin: 8px auto;
+  }
+  .margin-top8 {
+    margin-top: 8px;
+  }
+  .btn {
+    padding: .45em 1.5em;
+    font-size: 16px;
+  }
+
+/* class styles */
+  .canvas {
+    width: 650px;
+    height: auto;
+    border: 1px solid black;
+  }
+  
+  #main-container {
+    margin: auto;
+    width: 600px;
+    height: 600px;
+    display: grid;
+    border: 1px solid skyblue;
+  }
+
+  .box {
+    border: 1px solid skyblue;
+  }
+
+  /* style for button and stuff */
+  .gridSize {
+    margin: 16px auto;
+    width: 600px;
+    border: 1px solid black;
+  }
+  
+  .gridSizeMod {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .sizeInput {
+    width: 45%;
+    text-align: center;
+    font-size: 24px;
+  }
+  .submitBtn {
+    padding: .45em 1.5em;
+    font-size: 16px;
+  }
+
+  #error {
+    display: none;
+    width: 80%;
+    border-radius: 8px;
+    border: 1px solid red;
+    padding: 8px;
+    font-size: 16px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+  }
+
+  .hoveredBlack {
+    background-color: black;
+  }
