@@ -1,15 +1,13 @@
 const gridContainer = document.querySelector('#main-container');
 window.addEventListener('onload', makeDivGrid(16,16));
 
-
-
 function makeDivGrid(col,rows) {
     for(let i = 0;i < (col * rows); i++) {
-        const div = document.createElement('div')
+        const newDiv = document.createElement('div')
         gridContainer.style.gridTemplateColumns = `repeat(${col}, auto)`;
         gridContainer.style.gridTemplateRows = `repeat(${rows}, auto)`;
         //div.style.border = '1px solid skyblue'
-        gridContainer.appendChild(div).classList.add('box')
+        gridContainer.appendChild(newDiv).classList.add('box') // adds the new div inside the gridContainer
     }
 }
 
@@ -23,34 +21,16 @@ document.getElementById('numberOnly').addEventListener('keypress', event => {
     }
 });
 
-
 //function onClickSubmitValue will get the input value
 function onClickSubmitValue() {
     const userInputGridSize = document.querySelector(".sizeInput").value;
-    if(userInputGridSize < 2 || userInputGridSize>100){
-        showError(); // call showError function
-    } else {
-        noError(); // call noError function which removes the error message
-        return userInputGridSize;
-    }
+    return userInputGridSize;
 }
 
-//show error message if input is not 2 to 100
-function showError() { 
-    let errorMessage = document.getElementById("error");
-    errorMessage.style.display = "block";
-  }
-//removes the error message if the input number is valid
-function noError() { 
-    let errorMessage = document.getElementById("error");
-    errorMessage.style.display = "none";
-  }
-
 //color pen
+boxDivsAddEventPastel();   //run default pen PASTEL
 
-boxDivsAddEventBlack(); //run default pen black
-
-function boxDivsAddEventBlack() {
+function boxDivsAddEventPastel() {
   let allTiles = document.querySelectorAll(".box");
   allTiles.forEach(element => {
     element.addEventListener("mouseover", pastelRGB);
@@ -62,13 +42,20 @@ function pastelRGB(event) {
     let b = Math.floor(Math.random() * 256);
     let c = Math.floor(Math.random() * 256);
     event.target.style.backgroundColor = `rgb(${a}, ${b}, ${c})`;
-    event.target.style.opacity += 0.3;
+    event.target.style.opacity = 0.3;
   }
-  
 
-function black() {
-  this.classList.add("hoveredBlack");
-}//this function changes the class of the box to hovered black
+//this function changes the class of the box to hovered black
+  function boxDivsAddEventBlack() {
+    let allTiles = document.querySelectorAll(".box");
+    allTiles.forEach(element => {
+      element.addEventListener("mouseover", black);
+    });
+  }
+function black(event) {
+    event.target.style.backgroundColor = `rgb(0,0,0)`;
+    event.target.style.opacity = 1;
+}
 
 //function to remove the highlighted box
 function removeAllBoxDivs() {
@@ -84,6 +71,15 @@ function submitButtonEvent() {
     onClickSubmitValue();
     removeAllBoxDivs();
     makeDivGrid(num,num);
+    boxDivsAddEventPastel();
+}
+
+// removed for now
+/* function changeToBlack() {
     boxDivsAddEventBlack();
 }
 
+function changeToPastel() {
+    boxDivsAddEventPastel();
+    }
+} */
